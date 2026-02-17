@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Registration Form</title>
+</head>
+<body>
+
+    <h2>Exercise 7: Registration Form</h2>
+
+    <form>
+        <fieldset>
+            <legend>Registration Details</legend>
+
+            <p>
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="username">
+            </p>
+
+            <p>
+                <label for="pass">Password:</label>
+                <input type="password" id="pass" name="password">
+            </p>
+
+            <p>
+                <label>Gender:</label><br>
+                <input type="radio" id="male" name="gender" value="male">
+                <label for="male">Male</label>
+                
+                <input type="radio" id="female" name="gender" value="female">
+                <label for="female">Female</label>
+                
+                <input type="radio" id="other" name="gender" value="other">
+                <label for="other">Other</label>
+            </p>
+
+            <p>
+                <label>Skills:</label><br>
+                <input type="checkbox" id="skill1" name="skills" value="html">
+                <label for="skill1">HTML</label>
+                
+                <input type="checkbox" id="skill2" name="skills" value="css">
+                <label for="skill2">CSS</label>
+                
+                <input type="checkbox" id="skill3" name="skills" value="js">
+                <label for="skill3">JavaScript</label>
+            </p>
+
+            <p>
+                <label for="country">Country:</label>
+                <select id="country" name="country">
+                    <option value="none">Select Country</option>
+                    <option value="india">India</option>
+                    <option value="usa">USA</option>
+                    <option value="uk">UK</option>
+                </select>
+            </p>
+
+            <p>
+                <input type="submit" value="Submit">
+                <input type="reset" value="Reset">
+            </p>
+
+        </fieldset>
+    </form>
+
+</body>
+</html>
