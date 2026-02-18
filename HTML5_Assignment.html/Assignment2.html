@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Online Hospital Appointment System</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+</head>
+
+<body>
+
+<header>
+    <h1>🏥 CityCare Hospital</h1>
+    <p>Book Your Appointment Online</p>
+</header>
+
+<main>
+
+<section>
+<form>
+
+    
+    <label>Full Name:</label>
+    <input type="text" name="fullname" required 
+           placeholder="Enter your full name"><br><br>
+
+    
+    <label>Age:</label>
+    <input type="number" name="age"
+           min="0" max="120" step="1"
+           required placeholder="Enter your age"><br><br>
+
+    
+    <label>Email:</label>
+    <input type="email" name="email"
+           required autocomplete="on"
+           placeholder="example@email.com"><br><br>
+
+    <label>Phone Number:</label>
+    <input type="tel" name="phone"
+           pattern="[0-9]{10}"
+           required
+           placeholder="Enter 10-digit number"><br><br>
+
+    
+    <label>Select Department:</label>
+    <input list="departments" name="department"
+           required
+           placeholder="Start typing department name"><br><br>
+
+    <datalist id="departments">
+        <option value="Cardiology">
+        <option value="Neurology">
+        <option value="Orthopedics">
+        <option value="Pediatrics">
+        <option value="Dermatology">
+    </datalist>
+
+    
+    <label>Preferred Doctor:</label>
+    <input list="doctors" name="doctor"
+           required
+           placeholder="Choose or type doctor's name"><br><br>
+
+    <datalist id="doctors">
+        <option value="Dr. Smith">
+        <option value="Dr. Johnson">
+        <option value="Dr. Williams">
+        <option value="Dr. Brown">
+        <option value="Dr. Taylor">
+    </datalist>
+
+    
+    <label>Appointment Date:</label>
+    <input type="date" name="appointmentDate"
+           min="2026-01-01"
+           required><br><br>
+
+    
+    <label>Appointment Time:</label>
+    <input type="time" name="appointmentTime" required><br><br>
+
+    
+    <label>
+        <input type="checkbox" name="emergency">
+        Emergency Case
+    </label><br><br>
+
+
+    <label>Upload Medical Reports:</label>
+    <input type="file" name="reports" multiple>
+
+    <button type="submit">Book Appointment</button>
+
+</form>
+</section>
+
+</main>
+
+<footer>
+    <p> Hospital Lane 000000000 </p>
+    <p>&copy; 2026 CityCare Hospital</p>
+</footer>
+
+</body>
+</html>
