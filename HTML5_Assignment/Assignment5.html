@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SecureBank – Open Savings Account</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Open your SecureBank savings account online safely and securely.">
+
+    
+</head>
+
+<body>
+
+<header>
+    <h1>SecureBank Open Your Savings Account</h1>
+</header>
+
+<main>
+
+<section>
+    <h2>Account Opening Form</h2>
+
+    <form>
+
+        
+        <label>Full Name:</label>
+        <input type="text" name="fullname"
+               required placeholder="Enter your full name"><br><br>
+
+        
+        <label>Email Address:</label>
+        <input type="email" name="email"
+               required autocomplete="on"
+               placeholder="example@email.com"><br><br>
+
+        
+        <label>Phone Number:</label>
+        <input type="tel" name="phone"
+               pattern="[0-9]{10}"
+               required
+               placeholder="Enter 10-digit mobile number"><br><br>
+
+        
+        <label>PAN Number:</label>
+        <input type="text" name="pan"
+               pattern="[A-Z]{5}[0-9]{4}[A-Z]{1}"
+               required
+               placeholder="ABCDE1234F"><br><br>
+
+        
+        <label>IFSC Code:</label>
+        <input type="text" name="ifsc"
+               pattern="[A-Za-z]{4}[0-9]{7}"
+               required
+               placeholder="ABCD1234567"><br><br>
+
+        
+        <label>Account Type:</label>
+        <input list="accountTypes" name="accountType"
+               required placeholder="Select account type"><br><br>
+
+        <datalist id="accountTypes">
+            <option value="Savings Account">
+            <option value="Salary Account">
+            <option value="Student Savings Account">
+            <option value="Senior Citizen Account">
+            <option value="Zero Balance Account">
+        </datalist>
+
+    
+        <label>Date of Birth:</label>
+        <input type="date" name="dob"
+               max="2008-12-31"
+               required><br><br>
+
+        
+        <label>Monthly Income (₹):</label>
+        <input type="number" name="income"
+               min="0" step="1000"
+               required placeholder="Enter monthly income"><br><br>
+
+        
+        <label>Upload Government ID Proof:</label>
+        <input type="file" name="idproof"
+               required>
+
+        <button type="submit">Submit Application</button>
+
+    </form>
+</section>
+
+</main>
+
+<footer>
+    <p>1800-123-456 | support@securebank.com</p>
+    <p>&copy; 2026 SecureBank. All Rights Reserved.</p>
+</footer>
+
+</body>
+</html>
