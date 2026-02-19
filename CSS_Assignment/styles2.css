@@ -1,0 +1,131 @@
+/* 1. Universal Selector */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Required Box Model property */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Navigation Styles */
+nav {
+    background-color: #2c3e50;
+    padding: 1rem;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+}
+
+/* Pseudo-class: first-child */
+nav ul li:first-child {
+    font-weight: bold;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+/* Pseudo-class: hover */
+nav ul li a:hover {
+    color: #3498db;
+    text-decoration: underline;
+}
+
+/* 2. ID Selector */
+#hero {
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://via.placeholder.com/1200x400');
+    background-size: cover;
+    color: white;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+/* 3. Layout: Course Grid using Flexbox */
+.course-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 40px;
+}
+
+/* 4. Class Selector & Box Model */
+.course {
+    border: 2px solid #ddd;   /* Border */
+    padding: 20px;            /* Padding */
+    margin: 10px;             /* Margin */
+    width: 300px;             /* Fixed Width */
+    border-radius: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+}
+
+/* Hover effect for course card */
+.course:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    border-color: #3498db;
+}
+
+/* 5. Child Selector */
+.course > h3 {
+    color: #2c3e50;
+    margin-bottom: 10px;
+    font-size: 1.5rem;
+}
+
+/* 6. Adjacent Sibling Selector */
+h3 + p {
+    color: #7f8c8d;
+    margin-bottom: 20px;
+}
+
+/* Button with Padding & Border Radius */
+.btn-primary {
+    background-color: #3498db;
+    color: white;
+    padding: 10px 20px;      /* Padding */
+    border: none;
+    border-radius: 25px;     /* Border Radius */
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.btn-primary:hover {
+    background-color: #2980b9;
+}
+
+/* Testimonials & Footer */
+.testimonials {
+    background-color: #f9f9f9;
+    padding: 50px;
+    text-align: center;
+}
+
+footer {
+    background-color: #2c3e50;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+}
+
+/* BONUS CHALLENGE: First and Last course background colors */
+.course:first-of-type {
+    background-color: #e3f2fd;
+}
+
+.course:last-of-type {
+    background-color: #f1f8e9;
+}

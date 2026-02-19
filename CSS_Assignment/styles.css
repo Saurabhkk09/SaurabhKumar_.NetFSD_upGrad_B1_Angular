@@ -1,0 +1,94 @@
+/* GROUP SELECTOR: Applied to all headings */
+h1, h2, h3 {
+    font-family: 'Segoe UI', sans-serif;
+    color: #2c3e50;
+    margin-bottom: 10px;
+}
+
+/* ELEMENT SELECTOR */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    color: #333;
+    background-color: #f9f9f9;
+}
+
+header {
+    background-color: #ffffff;
+    padding: 20px;
+    text-align: center;
+    border-bottom: 2px solid #e3f2fd;
+}
+
+/* BANNER SECTION */
+.banner {
+    background-color: #007bff;
+    color: white;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+/* SERVICES SECTION & DESCENDANT SELECTOR */
+.services {
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.services p {
+    color: #555; /* Descendant selector: only affects p inside .services */
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* CLASS SELECTOR & BOX MODEL PRACTICE */
+.service-card {
+    background-color: white;
+    border: 2px solid #007bff; /* Requirement: 2px solid border */
+    padding: 20px;             /* Requirement: 20px padding */
+    margin: 15px;              /* Requirement: 15px margin */
+    box-sizing: border-box;    /* Requirement: box-sizing */
+    width: 250px;
+    border-radius: 12px;       /* Soft rounded corners */
+}
+
+/* ID SELECTOR */
+#contact {
+    padding: 50px;
+    background-color: #ffffff;
+    text-align: center;
+}
+
+/* ATTRIBUTE SELECTOR */
+input[type="text"] {
+    width: 80%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+}
+
+/* PSEUDO-CLASS SELECTOR */
+button {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+button:hover {
+    background-color: #0056b3; /* Change color on hover */
+}
+
+footer {
+    background-color: #2c3e50;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+}

@@ -1,0 +1,68 @@
+/* 1. Global Reset & Box Model */
+* {
+    box-sizing: border-box; /* Requirement: Box-sizing */
+    margin: 0;
+    padding: 0;
+}
+
+/* 2. Element Selector */
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #f4f7f6;
+}
+
+/* 3. ID Selector */
+#main-header {
+    background: #2c3e50;
+    color: white;
+    padding: 20px;
+}
+
+/* 4. Descendant Selector */
+.sidebar ul li {
+    list-style: none;
+    padding: 15px;
+}
+
+/* 5. Class Selector & Box Model Requirement */
+.card {
+    background: white;
+    margin: 20px;            /* Margin */
+    padding: 25px;           /* Padding */
+    border: 1px solid #ddd;  /* Border */
+    border-radius: 12px;     /* Border Radius */
+    width: 300px;
+}
+
+/* 6. Group Selector */
+th, td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+}
+
+/* 7. Attribute Selector */
+input[type="password"] {
+    border: 2px solid #3498db;
+    padding: 8px;
+    border-radius: 4px;
+}
+
+/* 8. Pseudo-classes */
+tr:hover {
+    background-color: #f1f1f1; /* Hover effect on rows */
+}
+
+button:active {
+    transform: scale(0.95); /* Click effect */
+    background-color: #2980b9;
+}
+
+/* 9. Debit & Credit Colors */
+.credit { color: #27ae60; }
+.debit { color: #e74c3c; }
+
+/* Dashboard Layout */
+.container { display: flex; }
+.sidebar { width: 200px; background: #ecf0f1; min-height: 100vh; }
+.content { flex: 1; padding: 20px; }

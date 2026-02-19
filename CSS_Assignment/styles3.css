@@ -1,0 +1,101 @@
+/* Layout Styling */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header {
+    background: #333;
+    color: white;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.main-container {
+    display: flex;
+    flex: 1;
+    padding: 20px;
+    gap: 20px;
+}
+
+/* Sidebar - Attribute Selector */
+.sidebar {
+    width: 200px;
+}
+input[type="checkbox"] {
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+/* Product Grid - Flexbox Layout */
+.product-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    flex: 3;
+}
+
+/* Product Card - Class Selector & Box Model */
+.product-card {
+    width: 200px;             /* Fixed Width */
+    padding: 15px;            /* Padding */
+    border: 1px solid #ddd;   /* Border */
+    margin: 10px;             /* Margin */
+    box-shadow: 2px 4px 8px rgba(0,0,0,0.1); /* Box Shadow */
+    text-align: center;
+    position: relative;
+    transition: transform 0.3s ease;
+    background-color: #fff;
+}
+
+/* Descendant Selector */
+.product-card img {
+    max-width: 100%;
+    border-bottom: 1px solid #eee;
+    margin-bottom: 10px;
+}
+
+/* Pseudo-class: Hover Effect */
+.product-card:hover {
+    transform: scale(1.05);
+}
+
+/* nth-child Selector: Even Cards Background */
+.product-card:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+/* Add to Cart Button & Hover */
+.add-btn {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.add-btn:hover {
+    background-color: #218838;
+}
+
+/* ID Selector */
+#cart {
+    flex: 1;
+    border-left: 2px solid #333;
+    padding-left: 20px;
+    height: fit-content;
+}
+
+footer {
+    background: #333;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    margin-top: auto;
+}

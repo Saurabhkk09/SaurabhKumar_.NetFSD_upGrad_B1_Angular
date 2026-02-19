@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SecureBank Dashboard</title>
+    <link rel="stylesheet" href="styles4.css">
+    <style>
+        /* Internal CSS: Account Balance Highlight */
+        .balance-amount {
+            color: #2ecc71;
+            font-size: 2rem;
+            font-weight: bold;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body>
+
+    <header id="main-header">
+        <h1>SecureBank</h1>
+        <div style="background-color: #ffcccc; color: #15150d; padding: 10px; border-left: 5px solid #d63031;">
+            <strong>Security Alert:</strong> Please verify your recent login from New York.
+        </div>
+    </header>
+
+    <div class="container">
+        <nav class="sidebar">
+            <ul>
+                <li><a href="#">Dashboard</a></li>
+                <li><a href="#">Accounts</a></li>
+                <li><a href="#">Transfers</a></li>
+            </ul>
+        </nav>
+
+        <main class="content">
+            <section class="summary-cards">
+                <div class="card" id="main-account">
+                    <h3>Savings Account</h3>
+                    <p class="balance-amount">$12,450.00</p>
+                </div>
+            </section>
+
+            <section class="transactions">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Date</th>
+                            <th>Description</th>
+                            <th>Amount</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="credit">
+                            <td>Oct 24</td>
+                            <td>Salary Deposit</td>
+                            <td>+$5,000</td>
+                        </tr>
+                        <tr class="debit">
+                            <td>Oct 25</td>
+                            <td>Amazon Prime</td>
+                            <td>-$14.99</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <section class="login-box">
+                <h4>Secure Login</h4>
+                <input type="password" placeholder="Enter PIN">
+                <button>Authorize</button>
+            </section>
+        </main>
+    </div>
+
+    <footer>
+        <p>&copy; 2023 SecureBank Privacy Policy</p>
+    </footer>
+</body>
+</html>
