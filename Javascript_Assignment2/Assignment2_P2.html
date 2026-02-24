@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object-Based User Display</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        #user-container {
+            margin-bottom: 20px;
+            padding: 10px;
+            border-left: 4px solid #007bff;
+            background-color: #f4f4f4;
+            min-height: 50px;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>User Information</h1>
+    
+    <div id="user-container">
+        <p><em>Click the button to load user data...</em></p>
+    </div>
+
+    <button id="display-btn">Display User Info</button>
+
+    <script>
+        const user = {
+            name: "Jordan Smith",
+            age: 30,
+            city: "Chicago"
+        };
+
+        function displayUserInfo(userObj) {
+            const container = document.getElementById('user-container');
+            
+            container.innerHTML = '';
+
+            const nameP = document.createElement('p');
+            nameP.innerHTML = `<strong>Name:</strong> ${userObj.name}`;
+
+            const ageP = document.createElement('p');
+            ageP.innerHTML = `<strong>Age:</strong> ${userObj.age}`;
+
+            const cityP = document.createElement('p');
+            cityP.innerHTML = `<strong>City:</strong> ${userObj.city}`;
+
+            container.appendChild(nameP);
+            container.appendChild(ageP);
+            container.appendChild(cityP);
+        }
+
+        document.getElementById('display-btn').addEventListener('click', function() {
+            displayUserInfo(user);
+        });
+    </script>
+
+</body>
+</html>
