@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Web Assessment</title>
+
+    <style>
+        /* BASE STYLES (Desktop First) */
+        body {
+            margin: 0;
+            font-family: sans-serif;
+            background-color: #ffffff; /* White background for desktop */
+            font-size: 22px;           /* Large font for desktop */
+            transition: background-color 0.4s ease;
+        }
+
+        header {
+            padding: 20px;
+            text-align: center;
+        }
+
+        /* Navigation Layout */
+        nav {
+            background-color: #333;
+            display: flex;             /* Horizontal layout by default */
+            justify-content: center;
+            gap: 30px;
+            padding: 15px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .content {
+            padding: 40px;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        /* Task 2 & 3: Media Query for Mobile (Screens 768px and below) */
+        @media screen and (max-width: 768px) {
+            body {
+                background-color: #fce4ec; /* Change background to pink for mobile */
+                font-size: 16px;           /* Adjust font size smaller */
+            }
+
+            nav {
+                flex-direction: column;    /* Convert navigation to vertical layout */
+                align-items: center;
+                gap: 10px;
+            }
+
+            header h1 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Responsive Design Demo</h1>
+    </header>
+
+    <nav>
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Portfolio</a>
+        <a href="#">Contact</a>
+    </nav>
+
+    <div class="content">
+        <h2>Instructions</h2>
+        <p>To test this page (Task 4):</p>
+        <ol>
+            <li>Open this file in your browser.</li>
+            <li>Right-click and choose <strong>Inspect</strong>.</li>
+            <li>Toggle the <strong>Device Toolbar</strong> (Ctrl+Shift+M).</li>
+            <li>Shrink the window width. You will see the background turn pink, the text get smaller, and the menu stack vertically.</li>
+        </ol>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number Analysis Utility</title>
+    <style>
+        body { font-family: sans-serif; display: flex; justify-content: center; padding: 20px; background-color: #f4f4f9; }
+        .card { background: white; padding: 2rem; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); width: 350px; }
+        input { width: 100%; padding: 10px; margin: 10px 0; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box; }
+        button { width: 100%; padding: 10px; background-color: #007bff; color: white; border: none; border-radius: 4px; cursor: pointer; }
+        button:hover { background-color: #0056b3; }
+        #results { margin-top: 20px; padding-top: 15px; border-top: 1px solid #eee; line-height: 1.6; }
+        .sequence { word-wrap: break-word; color: #666; font-size: 0.9em; }
+    </style>
+</head>
+<body>
+
+<div class="card">
+    <h2>Number Analyzer</h2>
+    <p>Enter a number to see the logic in action:</p>
+    <input type="number" id="numInput" placeholder="e.g., 7">
+    <button onclick="analyzeNumber()">Run Analysis</button>
+
+    <div id="results">
+        </div>
+</div>
+
+<script>
+    function analyzeNumber() {
+        const num = parseInt(document.getElementById('numInput').value);
+        const display = document.getElementById('results');
+        
+        if (isNaN(num)) {
+            display.innerHTML = "Please enter a valid number.";
+            return;
+        }
+
+        let positivity = (num >= 0) ? "Positive" : "Negative";
+
+        let parity;
+        if (num % 2 === 0) {
+            parity = "Even";
+        } else {
+            parity = "Odd";
+        }
+
+        let sequence = "";
+        for (let i = 1; i <= num; i++) {
+            sequence += i + (i === num ? "" : ", ");
+        }
+
+        display.innerHTML = `
+            <strong>Status:</strong> ${positivity} <br>
+            <strong>Parity:</strong> ${parity} <br>
+            <strong>Range (1 to ${num}):</strong> 
+            <div class="sequence">${sequence || "N/A (Number < 1)"}</div>
+        `;
+    }
+</script>
+
+</body>
+</html>

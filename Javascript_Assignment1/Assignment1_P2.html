@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Student Grade Evaluator</title>
+</head>
+<body>
+
+    <h1>Student Performance Report</h1>
+
+    <script>
+        
+        const marks = 82;
+        let grade;
+
+        if (marks >= 75) {
+            grade = "Grade A";
+        } else if (marks >= 60) {
+            grade = "Grade B";
+        } else if (marks >= 40) {
+            grade = "Grade C";
+        } else {
+            grade = "Fail";
+        }
+
+        console.log("Student Marks:", marks);
+        console.log("Final Grade:", grade);
+
+        document.write("<h3>Marks Obtained: " + marks + "</h3>");
+        document.write("<h3>Final Result: " + grade + "</h3>");
+    </script>
+
+</body>
+</html>

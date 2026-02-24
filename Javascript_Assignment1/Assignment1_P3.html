@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Discount Calculator</title>
+    <style>
+        body { font-family: sans-serif; line-height: 1.6; padding: 20px; color: #333; }
+        .receipt-card { border: 2px solid #ddd; padding: 20px; border-radius: 8px; max-width: 300px; background-color: #f9f9f9; }
+        h2 { margin-top: 0; color: #2c3e50; }
+        hr { border: 0; border-top: 1px dashed #bbb; }
+        .total { font-weight: bold; font-size: 1.2em; color: #e74c3c; }
+    </style>
+</head>
+<body>
+
+    <h1>Store Checkout</h1>
+    
+    <div class="receipt-card">
+        <h2>Receipt</h2>
+        <p>Purchase Amount: $<span id="original"></span></p>
+        <p>Discount Rate: <span id="rate"></span>%</p>
+        <p>Discount Saved: $<span id="discount"></span></p>
+        <hr>
+        <p class="total">Final Total: $<span id="final"></span></p>
+    </div>
+
+    <script>
+        let purchaseAmount = 5500; 
+
+        let discountRate = 0;
+        let discountAmount = 0;
+        let finalAmount = 0;
+
+        if (purchaseAmount >= 5000) {
+            discountRate = 0.20; 
+        } else if (purchaseAmount >= 3000) {
+            discountRate = 0.10; 
+        } else {
+            discountRate = 0;    
+        }
+
+        discountAmount = purchaseAmount * discountRate;
+        finalAmount = purchaseAmount - discountAmount;
+
+        document.getElementById("original").innerText = purchaseAmount;
+        document.getElementById("rate").innerText = (discountRate * 100);
+        document.getElementById("discount").innerText = discountAmount;
+        document.getElementById("final").innerText = finalAmount;
+
+        console.log("Calculation Complete for amount: " + purchaseAmount);
+    </script>
+
+</body>
+</html>
