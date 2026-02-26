@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Local Notes Saver</title>
+    <style>
+        body { font-family: sans-serif; padding: 20px; max-width: 500px; }
+        textarea { width: 100%; height: 150px; margin-bottom: 10px; padding: 10px; }
+        button { padding: 10px 15px; cursor: pointer; }
+        .save-btn { background-color: #28a745; color: white; border: none; }
+        .clear-btn { background-color: #dc3545; color: white; border: none; }
+    </style>
+</head>
+<body onload="loadNote()">
+
+    <h2>Daily Notes</h2>
+    <textarea id="noteInput" placeholder="Start writing your note here..."></textarea>
+    
+    <br>
+
+    <button class="save-btn" onclick="saveNote()">Save Note</button>
+    <button class="clear-btn" onclick="clearNote()">Clear Note</button>
+
+    <script>
+      
+        const STORAGE_KEY = "user_daily_note";
+
+        function loadNote() {
+            const savedData = localStorage.getItem(STORAGE_KEY);
+            if (savedData) {
+                document.getElementById('noteInput').value = savedData;
+            }
+        }
+
+        function saveNote() {
+            const content = document.getElementById('noteInput').value;
+            localStorage.setItem(STORAGE_KEY, content);
+            alert("Note saved successfully!");
+        }
+
+        function clearNote() {
+            if (confirm("Are you sure you want to delete your note?")) {
+                localStorage.removeItem(STORAGE_KEY);
+                document.getElementById('noteInput').value = "";
+            }
+        }
+    </script>
+</body>
+</html>

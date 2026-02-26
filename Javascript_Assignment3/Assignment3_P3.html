@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Location Logger</title>
+    <style>
+        body { font-family: sans-serif; padding: 20px; line-height: 1.6; }
+        .box { border: 1px solid #ddd; padding: 15px; border-radius: 8px; margin-bottom: 20px; }
+        .error { color: #d9534f; font-weight: bold; }
+        ul { list-style: none; padding: 0; }
+        li { background: #f4f4f4; margin: 5px 0; padding: 10px; border-radius: 4px; font-size: 0.9em; }
+    </style>
+</head>
+<body>
+
+    <h2>Location-Based Weather Logger</h2>
+
+    <div class="box">
+        <button onclick="getLocation()">📍 Get My Location</button>
+        <p id="current-display">Coordinates will appear here...</p>
+        <p id="error-message" class="error"></p>
+    </div>
+
+    <h3>Recent History (Last 5)</h3>
+    <ul id="history-list"></ul>
+
+    <script>
+        window.onload = displayHistory;
+
+        function getLocation() {
+            const display = document.getElementById('current-display');
+            const errorBox = document.getElementById('error-message');
+            
+            errorBox.innerText = "";
+            display.innerText = "Locating...";
+
+            if (!navigator.geolocation) {
+                errorBox.innerText = "Geolocation is not supported by your browser.";
+                return;
+            }
+
+            navigator.geolocation.getCurrentPosition(successHandler, errorHandler, {
+                timeout: 10000 
+            });
+        }
+
+        function successHandler(position) {
+            const lat = position.coords.latitude;
+            const lon = position.coords.longitude;
+            const timestamp = new Date().toLocaleString();
+
+            document.getElementById('current-display').innerHTML = 
+                `<strong>Lat:</strong> ${lat.toFixed(4)} | <strong>Lon:</strong> ${lon.toFixed(4)}`;
+
+            saveToHistory({ lat, lon, timestamp });
+        }
+
+        function errorHandler(error) {
+            const errorBox = document.getElementById('error-message');
+            document.getElementById('current-display').innerText = "";
+
+            switch(error.code) {
+                case error.PERMISSION_DENIED:
+                    errorBox.innerText = "User denied the request for Geolocation.";
+                    break;
+                case error.POSITION_UNAVAILABLE:
+                    errorBox.innerText = "Location information is unavailable.";
+                    break;
+                case error.TIMEOUT:
+                    errorBox.innerText = "The request to get user location timed out.";
+                    break;
+                default:
+                    errorBox.innerText = "An unknown error occurred.";
+                    break;
+            }
+        }
+
+        function saveToHistory(newEntry) {
+            let history = JSON.parse(localStorage.getItem('locationHistory')) || [];
+
+            history.unshift(newEntry);
+
+            if (history.length > 5) {
+                history = history.slice(0, 5);
+            }
+
+            localStorage.setItem('locationHistory', JSON.stringify(history));
+            
+            displayHistory();
+        }
+
+        function displayHistory() {
+            const list = document.getElementById('history-list');
+            const history = JSON.parse(localStorage.getItem('locationHistory')) || [];
+
+            list.innerHTML = history.length === 0 ? "<li>No history yet.</li>" : "";
+
+            history.forEach(item => {
+                const li = document.createElement('li');
+                li.innerHTML = `📅 ${item.timestamp} <br> 📍 ${item.lat.toFixed(4)}, ${item.lon.toFixed(4)}`;
+                list.appendChild(li);
+            });
+        }
+    </script>
+</body>
+</html>
